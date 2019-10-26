@@ -1,0 +1,65 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PedroLamas.WP7.CTTObjectos.View.ObjectDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:frameworkSystemControls="clr-namespace:System.Windows.Controls;assembly=Cimbalino.Phone.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    Style="{StaticResource PhoneApplicationPageStyle}">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Pivot Title="{StaticResource ApplicationTitle}">
+            <controls:PivotItem Header="objecto">
+                <ScrollViewer x:Name="ContentPanel" Grid.Row="1">
+                    <StackPanel CacheMode="BitmapCache">
+                        <frameworkSystemControls:HeaderedContentControl Header="descrição" Content="{Binding Model.Description}" Style="{StaticResource HeaderedContentControl1Style}" Visibility="{Binding Model.Description, Converter={StaticResource StringToVisibilityConverter}}" />
+                        <frameworkSystemControls:HeaderedContentControl Header="número do objecto" Content="{Binding Model.State.ObjectId}" Style="{StaticResource HeaderedContentControl1Style}" />
+                        <frameworkSystemControls:HeaderedContentControl Header="produto" Content="{Binding Model.State.ObjectType}" Style="{StaticResource HeaderedContentControl1Style}" />
+                        <frameworkSystemControls:HeaderedContentControl Header="data" Content="{Binding Model.State.Date}" Style="{StaticResource HeaderedContentControl1Style}" />
+                        <frameworkSystemControls:HeaderedContentControl Header="estado" Content="{Binding Model.State.State}" Style="{StaticResource HeaderedContentControl1Style}" />
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+            <controls:PivotItem Header="detalhes">
+                <ListBox ItemsSource="{Binding Model.State.Details}" toolkit:TiltEffect.SuppressTilt="True">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource NoSelectionListBoxItemStyle}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Rectangle Fill="{StaticResource PhoneAccentBrush}" Width="6" Margin="12" />
+                                
+                                <StackPanel CacheMode="BitmapCache" Grid.Column="1">
+                                    <frameworkSystemControls:HeaderedContentControl Header="data" Content="{Binding Date}" Style="{StaticResource HeaderedContentControl2Style}" />
+                                    <frameworkSystemControls:HeaderedContentControl Header="estado" Content="{Binding State}" Style="{StaticResource HeaderedContentControl2Style}" />
+                                    <frameworkSystemControls:HeaderedContentControl Header="motivo" Content="{Binding Reason}" Style="{StaticResource HeaderedContentControl2Style}" Visibility="{Binding Reason, Converter={StaticResource StringToVisibilityConverter}}" />
+                                    <frameworkSystemControls:HeaderedContentControl Header="local" Content="{Binding Location}" Style="{StaticResource HeaderedContentControl2Style}" Visibility="{Binding Location, Converter={StaticResource StringToVisibilityConverter}}" />
+                                    <frameworkSystemControls:HeaderedContentControl Header="receptor" Content="{Binding Receiver}" Style="{StaticResource HeaderedContentControl2Style}" Visibility="{Binding Receiver, Converter={StaticResource StringToVisibilityConverter}}" />
+                                    <toolkit:Separator />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PedroLamas.WP7.CTTObjectos.View.NewObjectPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    xmlns:command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:frameworkBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    DataContext="{Binding NewObject, Source={StaticResource Locator}}"
+    Style="{StaticResource PhoneApplicationPageStyle}">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <i:Interaction.Behaviors>
+            <frameworkBehaviors:ApplicationBarBehavior>
+                <frameworkBehaviors:ApplicationBarIconButton IconUri="/Images/appbar.check.rest.png" Text="concluído" Command="{Binding AddObjectCommand}" />
+            </frameworkBehaviors:ApplicationBarBehavior>
+        </i:Interaction.Behaviors>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource ApplicationTitle}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="novo objecto" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Text="Descriçao" Style="{StaticResource PhoneTextSubtleStyle}" />
+            <toolkit:PhoneTextBox Text="{Binding Description, Mode=TwoWay}" Hint="opcional" />
+            <TextBlock Text="Número do Objecto" Style="{StaticResource PhoneTextSubtleStyle}" />
+            <TextBox Text="{Binding ObjectId, Mode=TwoWay}" />
+            <Button Content="ler código de barras" HorizontalAlignment="Left" Command="{Binding ScanBarcodeCommand}" />
+        </StackPanel>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar />
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

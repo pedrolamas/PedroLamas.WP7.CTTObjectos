@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{A2E9A5EE-AD27-4E31-8F86-F49D7DE85B6D}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\AdDuplex.AdControl.Silverlight.dll = Lib\AdDuplex.AdControl.Silverlight.dll
+		Bin\Google.AdMob.Ads.WindowsPhone7.dll = Bin\Google.AdMob.Ads.WindowsPhone7.dll
+		Lib\MobFox.Ads.dll = Lib\MobFox.Ads.dll
+		Lib\Silverlight_ZXing_Core.dll = Lib\Silverlight_ZXing_Core.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroLamas.WP7.CTTObjectos", "PedroLamas.WP7.CTTObjectos\PedroLamas.WP7.CTTObjectos.csproj", "{4852EA3A-0A9B-42A5-939D-928E8637085A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroLamas.WP7.CTTObjectos.STAgent", "PedroLamas.WP7.CTTObjectos.STAgent\PedroLamas.WP7.CTTObjectos.STAgent.csproj", "{D356DA15-EBEF-460B-982A-F78A3352EB17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Garbage", "Garbage", "{0A0BCB14-3A37-42BD-956C-1CE4249586FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroLamas.WP7.ServiceModel", "..\..\PedroLamas.WP7.ServiceModel\PedroLamas.WP7.ServiceModel\PedroLamas.WP7.ServiceModel.csproj", "{36C94B54-B876-4782-8851-5694F5A6F52A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4852EA3A-0A9B-42A5-939D-928E8637085A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D356DA15-EBEF-460B-982A-F78A3352EB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D356DA15-EBEF-460B-982A-F78A3352EB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D356DA15-EBEF-460B-982A-F78A3352EB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D356DA15-EBEF-460B-982A-F78A3352EB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C94B54-B876-4782-8851-5694F5A6F52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C94B54-B876-4782-8851-5694F5A6F52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C94B54-B876-4782-8851-5694F5A6F52A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C94B54-B876-4782-8851-5694F5A6F52A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D356DA15-EBEF-460B-982A-F78A3352EB17} = {0A0BCB14-3A37-42BD-956C-1CE4249586FD}
+	EndGlobalSection
+EndGlobal
